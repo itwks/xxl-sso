@@ -170,7 +170,7 @@ public class XxlSsoHelper {
         // parse token
         LoginInfo loginInfoForToken = TokenHelper.parseToken(token);
         if (loginInfoForToken == null) {
-            return Response.ofFail("token is invalid");
+            return Response.ofFail("logout fail, token is invalid");
         }
 
         // remove store-LoginInfo
@@ -213,7 +213,7 @@ public class XxlSsoHelper {
         // parse token
         LoginInfo loginInfoForToken = TokenHelper.parseToken(token);
         if (loginInfoForToken == null || StringTool.isBlank(loginInfoForToken.getSignature())) {
-            return Response.ofFail("token is invalid");
+            return Response.ofFail("not login, token is invalid");
         }
 
         // get store-LoginInfo
@@ -226,7 +226,7 @@ public class XxlSsoHelper {
         // valid version
         if (!loginInfoForToken.getSignature().equals(loginInfo.getSignature())){
             // Non-empty and inconsistent
-            return Response.ofFail("token signature is invalid");
+            return Response.ofFail("not login, token signature is invalid");
         }
 
         return Response.ofSuccess(loginInfo);
@@ -291,7 +291,7 @@ public class XxlSsoHelper {
         // parse token
         LoginInfo loginInfoForToken = TokenHelper.parseToken(token);
         if (loginInfoForToken == null) {
-            return Response.ofFail("not login.");
+            return Response.ofFail("create ticket fail, not login.");
         }
 
         // generate ticket
@@ -349,12 +349,12 @@ public class XxlSsoHelper {
             return Response.ofSuccess();
         }
         if (CollectionTool.isEmpty(loginInfo.getRoleList())) {
-            return Response.ofFail("roleList is null.");
+            return Response.ofFail("has no role[2]");
         }
 
         return loginInfo.getRoleList().contains(role)
                 ?Response.ofSuccess()
-                :Response.ofFail("has no role.");
+                :Response.ofFail("has no role");
     }
 
     /**
@@ -370,12 +370,12 @@ public class XxlSsoHelper {
             return Response.ofSuccess();
         }
         if (CollectionTool.isEmpty(loginInfo.getPermissionList())) {
-            return Response.ofFail("permissionList is null.");
+            return Response.ofFail("has no permission[2]");
         }
 
         return loginInfo.getPermissionList().contains(permission)
                 ?Response.ofSuccess()
-                :Response.ofFail("has no permission.");
+                :Response.ofFail("has no permission");
     }
 
 
