@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xuxueli</groupId>
     <artifactId>xxl-sso</artifactId>
-    <version>2.3.3-SNAPSHOT</version>
+    <version>2.4.0</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -29,21 +29,22 @@
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
         <!-- base -->
         <slf4j-api.version>2.0.17</slf4j-api.version>
-        <junit-jupiter.version>6.0.1</junit-jupiter.version>
+        <junit-jupiter.version>6.0.3</junit-jupiter.version>
 
         <!-- servlet -->
         <jakarta.servlet-api.version>6.1.0</jakarta.servlet-api.version>
         <!-- spring -->
-        <spring-boot.version>4.0.1</spring-boot.version>
-        <spring.version>7.0.2</spring.version>
+        <spring-boot.version>4.0.5</spring-boot.version>
+        <spring.version>7.0.6</spring.version>
+
         <!-- xxl-tool -->
-        <xxl-tool.version>2.4.2</xxl-tool.version>
+        <xxl-tool.version>2.5.0</xxl-tool.version>
         <gson.version>2.13.2</gson.version>
         <!-- jedis -->
-        <jedis.version>7.2.0</jedis.version>
+        <jedis.version>7.4.1</jedis.version>
     </properties>
 
     <dependencyManagement>
